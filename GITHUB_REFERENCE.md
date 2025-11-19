@@ -4,9 +4,10 @@
 
 ## Repository Setup
 
-When setting up the GitHub repository:
-- Repository name: (to be provided)
-- Repository URL: (to be provided)
+GitHub repository:
+- Repository name: `glutemaxxing-website`
+- Repository URL: https://github.com/rmach816/glutemaxxing-website
+- Status: ✅ Code has been pushed to the repository
 
 ## Deployment
 
