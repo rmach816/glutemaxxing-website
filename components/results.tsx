@@ -66,11 +66,11 @@ export default function Results() {
                 className="object-cover"
               />
             </div>
-            <div className="p-12 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <div className="p-6 sm:p-12 flex flex-col justify-center">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 Track Your Transformation
               </h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
                 Our AI analyzes your progress photos to give you detailed scores and insights. 
                 See your glute development improve week by week with visual comparisons and 
                 data-driven metrics.
