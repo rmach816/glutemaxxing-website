@@ -1,31 +1,31 @@
 'use client'
 
 import Image from 'next/image'
-import { Dumbbell, TrendingUp, Sparkles, Calendar } from 'lucide-react'
+import { Sparkles, Calendar, TrendingUp, Dumbbell } from 'lucide-react'
 
 const features = [
   {
     icon: Sparkles,
     title: 'AI-Powered Analysis',
-    description: 'Get personalized glute scores and detailed breakdowns using advanced AI technology.',
-    image: '/assets/progress-screen/Abstract purple gradient background.png',
+    description: 'Get personalized glute scores with detailed breakdowns of shape, symmetry, and strength indicators.',
+    image: '/assets/progress-screen/before-after.png', // Changed to show actual analysis
   },
   {
     icon: Calendar,
     title: '28-Day Programs',
-    description: 'Structured workout plans that adapt to your fitness level and goals.',
-    image: '/assets/workout-program-screens/Motivational.png',
+    description: 'Structured workout plans tailored to your fitness level, progressing from foundation to advanced.',
+    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed to show someone viewing a program
   },
   {
     icon: TrendingUp,
     title: 'Progress Tracking',
-    description: 'Track your improvements with before/after photos and detailed analytics.',
+    description: 'Visual charts and analytics showing your glute development over time with detailed metrics.',
     image: '/assets/progress-screen/fitness chart background.png',
   },
   {
     icon: Dumbbell,
     title: 'Expert Guidance',
-    description: 'Form cues, exercise library, and personalized recommendations.',
+    description: 'Form cues, exercise demonstrations, and personalized recommendations for every workout.',
     image: '/assets/active-workout-screen/hipthrust.png',
   },
 ]

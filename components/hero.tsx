@@ -43,7 +43,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-              GluteMaxxing gives you structured 28-day programs, AI-powered progress tracking, and expert guidance to maximize your glute development.
+              Transform your glutes with personalized 28-day programs, AI-powered progress analysis, and expert workout guidance designed for your fitness level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               {user ? (
@@ -93,7 +93,7 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
               <Image
                 src="/assets/home-screen/motivationalfitnessscene.png"
-                alt="Woman working out"
+                alt="Woman working out with glutes focus"
                 fill
                 className="object-cover"
                 priority

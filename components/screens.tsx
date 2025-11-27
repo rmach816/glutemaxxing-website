@@ -6,12 +6,14 @@ const screens = [
   {
     label: 'Home Dashboard',
     description: 'Track your 28-day program progress',
-    image: '/assets/home-screen/motivationalfitnessscene.png',
+    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed - shows someone viewing dashboard
+    placeholder: 'Woman viewing tablet showing workout dashboard with progress bars and stats',
   },
   {
     label: 'Active Workout',
     description: 'Real-time exercise guidance and tracking',
     image: '/assets/active-workout-screen/calmfitnessscene.png',
+    placeholder: 'Woman performing glute exercise with phone showing exercise instructions',
   },
   {
     label: 'Progress Tracking',
@@ -22,6 +24,7 @@ const screens = [
     label: 'Program Overview',
     description: '28-day structured workout plans',
     image: '/assets/workout-program-screens/Motivational.png',
+    placeholder: 'Phone screen showing 28-day workout program calendar with day markers and progress',
   },
 ]
 

@@ -16,7 +16,8 @@ const steps = [
     number: '2',
     title: 'Get Your 28-Day Program',
     description: 'Receive a structured workout plan tailored to your level. Programs progress from foundation to advanced.',
-    image: '/assets/workout-program-screens/Motivational.png',
+    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed - shows program viewing
+    placeholder: 'Woman viewing phone/tablet showing 28-day workout program calendar with exercise list',
   },
   {
     icon: BarChart3,
