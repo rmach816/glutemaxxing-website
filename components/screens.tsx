@@ -6,14 +6,13 @@ const screens = [
   {
     label: 'Home Dashboard',
     description: 'Track your 28-day program progress',
-    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed - shows someone viewing dashboard
-    placeholder: 'Woman viewing tablet showing workout dashboard with progress bars and stats',
+    image: '/assets/home-screen/dashboard-view.png', // Updated to use new dashboard image
+    fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
   {
     label: 'Active Workout',
     description: 'Real-time exercise guidance and tracking',
     image: '/assets/active-workout-screen/calmfitnessscene.png',
-    placeholder: 'Woman performing glute exercise with phone showing exercise instructions',
   },
   {
     label: 'Progress Tracking',
@@ -23,8 +22,8 @@ const screens = [
   {
     label: 'Program Overview',
     description: '28-day structured workout plans',
-    image: '/assets/workout-program-screens/Motivational.png',
-    placeholder: 'Phone screen showing 28-day workout program calendar with day markers and progress',
+    image: '/assets/workout-program-screens/28-day-program-calendar.png', // Updated to use new calendar image
+    fallback: '/assets/workout-program-screens/Motivational.png',
   },
 ]
 
@@ -44,14 +43,18 @@ export default function Screens() {
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
             >
               <div className="aspect-[9/16] relative overflow-hidden bg-gray-100">
-                {screen.image && (
-                  <Image
-                    src={screen.image}
-                    alt={screen.label}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                )}
+                <Image
+                  src={screen.image}
+                  alt={screen.label}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    // Fallback to alternative image if new image doesn't exist
+                    if (screen.fallback) {
+                      e.currentTarget.src = screen.fallback
+                    }
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="p-6">

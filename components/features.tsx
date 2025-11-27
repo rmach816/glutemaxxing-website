@@ -8,13 +8,14 @@ const features = [
     icon: Sparkles,
     title: 'AI-Powered Analysis',
     description: 'Get personalized glute scores with detailed breakdowns of shape, symmetry, and strength indicators.',
-    image: '/assets/progress-screen/before-after.png', // Changed to show actual analysis
+    image: '/assets/progress-screen/before-after.png',
   },
   {
     icon: Calendar,
     title: '28-Day Programs',
     description: 'Structured workout plans tailored to your fitness level, progressing from foundation to advanced.',
-    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed to show someone viewing a program
+    image: '/assets/home-screen/dashboard-view.png', // Updated to use new dashboard image
+    fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
   {
     icon: TrendingUp,
@@ -48,14 +49,18 @@ export default function Features() {
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
               >
                 <div className="relative h-64 overflow-hidden">
-                  {feature.image && (
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  )}
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      // Fallback to alternative image if new image doesn't exist
+                      if (feature.fallback) {
+                        e.currentTarget.src = feature.fallback
+                      }
+                    }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent" />
                   <div className="absolute top-6 left-6">
                     <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">

@@ -16,8 +16,8 @@ const steps = [
     number: '2',
     title: 'Get Your 28-Day Program',
     description: 'Receive a structured workout plan tailored to your level. Programs progress from foundation to advanced.',
-    image: '/assets/home-screen/womanbrowsingtablet.png', // Changed - shows program viewing
-    placeholder: 'Woman viewing phone/tablet showing 28-day workout program calendar with exercise list',
+    image: '/assets/workout-program-screens/28-day-program-calendar.png', // Updated to use new calendar image
+    fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
   {
     icon: BarChart3,
@@ -49,14 +49,18 @@ export default function HowItWorks() {
 
                 <div className="relative z-10 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                   <div className="relative h-64 overflow-hidden">
-                    {step.image && (
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    )}
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback to alternative image if new image doesn't exist
+                        if (step.fallback) {
+                          e.currentTarget.src = step.fallback
+                        }
+                      }}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent" />
                     <div className="absolute top-6 left-6">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
