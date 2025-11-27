@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'What if I have technical issues?',
-    answer: 'Our support team is here to help. Visit the Contact section or email support@glutemaxxing.com for assistance.'
+    answer: 'Our support team is here to help. Visit the Contact section or email support@glutemaxxing.app for assistance.'
   },
   {
     question: 'How do I cancel my subscription?',
@@ -45,8 +45,8 @@ export default function FAQ() {
     <section id="faq" className="bg-white py-20 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-600">Everything you need to know about GluteMaxxing</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg sm:text-xl text-gray-600">Everything you need to know about GluteMaxxing</p>
         </div>
 
         <div className="space-y-4">

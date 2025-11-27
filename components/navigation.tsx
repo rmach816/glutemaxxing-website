@@ -1,11 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { Menu, X, User } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
 
 export default function Navigation() {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+  const [user, setUser] = useState<any>(null)
+
+  useEffect(() => {
+    checkUser()
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null)
+    })
+  }, [])
+
+  const checkUser = async () => {
+    const { data: { session } } = await supabase.auth.getSession()
+    setUser(session?.user || null)
+  }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -45,13 +61,42 @@ export default function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex gap-3">
-            <button
-              onClick={() => scrollToSection('download')}
-              className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm hover:shadow-lg transition-shadow"
-            >
-              Get The App
-            </button>
+          <div className="hidden md:flex gap-3 items-center">
+            {user ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >
+                  <User size={18} />
+                  <span>View Progress</span>
+                </Link>
+                <button
+                  onClick={async () => {
+                    await supabase.auth.signOut()
+                    router.push('/')
+                  }}
+                  className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/auth"
+                  className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >
+                  Sign In
+                </Link>
+                <button
+                  onClick={() => scrollToSection('download')}
+                  className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm hover:shadow-lg transition-shadow"
+                >
+                  Get The App
+                </button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,12 +141,46 @@ export default function Navigation() {
             >
               Contact
             </button>
-            <button
-              onClick={() => scrollToSection('download')}
-              className="block w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm mt-4"
-            >
-              Get The App
-            </button>
+            {user ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  View Progress
+                </Link>
+                <button
+                  onClick={async () => {
+                    await supabase.auth.signOut()
+                    setIsOpen(false)
+                    router.push('/')
+                  }}
+                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/auth"
+                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Sign In
+                </Link>
+                <button
+                  onClick={() => {
+                    scrollToSection('download')
+                    setIsOpen(false)
+                  }}
+                  className="block w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm mt-4"
+                >
+                  Get The App
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>

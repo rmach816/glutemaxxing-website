@@ -1,46 +1,99 @@
 'use client'
 
-import { User } from 'lucide-react'
+import Image from 'next/image'
+import { TrendingUp } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'David R.',
-    quote: 'Having a focused plan for glutes finally made leg day feel like it had a purpose.'
+    name: 'Sarah M.',
+    quote: 'I finally have a program that actually targets my glutes. The progress tracking keeps me motivated!',
+    improvement: '+2.3',
   },
   {
-    name: 'Marcus T.',
-    quote: 'The progress tracking keeps me motivated. I can actually see my improvements week to week.'
+    name: 'Jessica K.',
+    quote: 'The AI analysis is incredible. I can see exactly where I\'m improving and what to focus on.',
+    improvement: '+1.8',
   },
   {
-    name: 'James K.',
-    quote: 'Best investment in my fitness journey. The form cues have saved me from bad habits.'
-  }
+    name: 'Emma L.',
+    quote: '28-day programs are perfect. Long enough to see results, short enough to stay committed.',
+    improvement: '+2.1',
+  },
 ]
 
 export default function Results() {
   return (
-    <section id="results" className="bg-white py-20 lg:py-32">
+    <section id="results" className="bg-gradient-to-br from-purple-50 to-white py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Results & Stories</h2>
-          <p className="text-xl text-gray-600 mb-8">Real feedback from our community</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Real Results</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8">See what our community is achieving</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8">
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  <span className="text-white font-semibold">
+                    {testimonial.name.charAt(0)}
+                  </span>
                 </div>
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <div>
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <div className="flex items-center gap-1 text-purple-600">
+                    <TrendingUp size={14} />
+                    <span className="text-sm font-semibold">{testimonial.improvement} Score</span>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+              <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-purple-50 rounded-2xl p-8 text-center">
+        {/* Before/After Showcase */}
+        <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div className="grid md:grid-cols-2">
+            <div className="relative h-96 bg-gradient-to-br from-purple-100 to-purple-200">
+              <Image
+                src="/assets/progress-screen/before-after.png"
+                alt="Progress comparison"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-12 flex flex-col justify-center">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Track Your Transformation
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Our AI analyzes your progress photos to give you detailed scores and insights. 
+                See your glute development improve week by week with visual comparisons and 
+                data-driven metrics.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full" />
+                  <span className="text-gray-700">Shape & Symmetry Analysis</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full" />
+                  <span className="text-gray-700">Strength Indicators</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full" />
+                  <span className="text-gray-700">Personalized Improvement Areas</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 bg-purple-50 rounded-2xl p-8 text-center">
           <p className="text-gray-700">
             <span className="font-semibold">Disclaimer:</span> Individual results vary. GluteMaxxing does not guarantee specific outcomes. Results depend on consistent training, proper nutrition, and individual factors.
           </p>

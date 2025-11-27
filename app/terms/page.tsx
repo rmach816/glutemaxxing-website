@@ -54,7 +54,7 @@ export default function TermsOfUse() {
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact</h2>
           <p className="text-gray-700">
-            For questions about these terms, email <a href="mailto:legal@glutemaxxing.com" className="text-purple-600 hover:text-purple-700">legal@glutemaxxing.com</a>
+            For questions about these terms, email <a href="mailto:admin@glutemaxxing.app" className="text-purple-600 hover:text-purple-700">admin@glutemaxxing.app</a>
           </p>
         </div>
       </div>

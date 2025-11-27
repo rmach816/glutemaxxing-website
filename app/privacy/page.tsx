@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Us</h2>
           <p className="text-gray-700">
-            If you have questions about this privacy policy, please email <a href="mailto:privacy@glutemaxxing.com" className="text-purple-600 hover:text-purple-700">privacy@glutemaxxing.com</a>
+            If you have questions about this privacy policy, please email <a href="mailto:admin@glutemaxxing.app" className="text-purple-600 hover:text-purple-700">admin@glutemaxxing.app</a>
           </p>
         </div>
       </div>
