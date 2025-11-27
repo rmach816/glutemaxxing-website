@@ -12,7 +12,7 @@ const screens = [
   {
     label: 'Active Workout',
     description: 'Real-time exercise guidance and tracking',
-    image: '/assets/active-workout-screen/calmfitnessscene.png',
+    image: '/assets/home-screen/activeworkout.png',
   },
   {
     label: 'Progress Tracking',

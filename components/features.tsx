@@ -8,7 +8,7 @@ const features = [
     icon: Camera,
     title: 'AI Photo Analysis',
     description: 'Upload a progress photo and our AI analyzes your current glute development, assessing shape, symmetry, and strength indicators. This analysis becomes the foundation for your personalized program.',
-    image: '/assets/progress-screen/before-after.png',
+    image: '/assets/home-screen/aiphotoanalysis.png',
   },
   {
     icon: Sparkles,
@@ -21,13 +21,13 @@ const features = [
     icon: TrendingUp,
     title: 'Progress Tracking',
     description: 'Track your improvements with AI-powered score analysis. See detailed breakdowns of your glute development over time with visual comparisons and data-driven insights.',
-    image: '/assets/progress-screen/fitness chart background.png',
+    image: '/assets/home-screen/progresstracking.png',
   },
   {
     icon: Dumbbell,
     title: 'Expert Guidance',
     description: 'Get personalized form cues, exercise demonstrations, and recommendations tailored to your current level. Every workout is designed specifically for where you are right now.',
-    image: '/assets/active-workout-screen/hipthrust.png',
+    image: '/assets/home-screen/expertguidance.png',
   },
 ]
 

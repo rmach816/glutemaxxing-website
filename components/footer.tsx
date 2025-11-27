@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Youtube } from 'lucide-react'
 
 export default function Footer() {
@@ -11,7 +12,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full" />
+              <Image 
+                src="/icon.svg" 
+                alt="GluteMaxxing Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-bold text-white">GluteMaxxing</span>
             </div>
             <p className="text-sm text-gray-400">Build stronger glutes. Unlock better performance.</p>

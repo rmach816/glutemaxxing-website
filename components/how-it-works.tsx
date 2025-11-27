@@ -9,7 +9,7 @@ const steps = [
     number: '1',
     title: 'AI Photo Analysis',
     description: 'Take a progress photo and our AI analyzes your current glute development. You\'ll receive a detailed score assessing shape, symmetry, and strength indicators. This analysis is the foundation for your personalized program.',
-    image: '/assets/progress-screen/before-after.png',
+    image: '/assets/home-screen/aiphotoanalysis.png',
   },
   {
     icon: Zap,
@@ -24,7 +24,7 @@ const steps = [
     number: '3',
     title: 'Track & Improve',
     description: 'Complete your workouts and take progress photos. Watch your AI glute score improve over time. Every 28 days, get a new custom program based on your updated analysis and progress.',
-    image: '/assets/progress-screen/before-after.png',
+    image: '/assets/home-screen/progresstracking.png',
   },
 ]
 
