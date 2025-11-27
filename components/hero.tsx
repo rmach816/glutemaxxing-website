@@ -33,18 +33,23 @@ export default function Hero() {
           <div className="space-y-6">
             <div className="inline-block">
               <span className="px-4 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-                AI-Powered Glute Development
+                AI-Powered Personalization
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Build Stronger Glutes.<br />
+              Not Another Cookie-Cutter<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800">
-                Unlock Better Performance.
+                Workout Program.
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-              Transform your glutes with personalized 28-day programs, AI-powered progress analysis, and expert workout guidance designed for your fitness level.
+              Get a <strong>completely personalized</strong> 28-day glute program created by AI based on your unique body analysis, fitness level, goals, and equipment. Every workout is tailored specifically to you—not a generic template.
             </p>
+            <div className="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-lg">
+              <p className="text-sm text-gray-700">
+                <strong>How it works:</strong> Our AI analyzes your progress photo to assess your current glute development, then combines that with your goals, equipment, and fitness level to create a custom program designed just for you.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               {user ? (
                 <button
@@ -72,18 +77,18 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-6 pt-4">
               <div>
-                <div className="text-2xl font-bold text-gray-900">28-Day</div>
-                <div className="text-sm text-gray-600">Programs</div>
+                <div className="text-2xl font-bold text-gray-900">100%</div>
+                <div className="text-sm text-gray-600">Customized</div>
               </div>
               <div className="h-12 w-px bg-gray-300" />
               <div>
                 <div className="text-2xl font-bold text-gray-900">AI</div>
-                <div className="text-sm text-gray-600">Analysis</div>
+                <div className="text-sm text-gray-600">Photo Analysis</div>
               </div>
               <div className="h-12 w-px bg-gray-300" />
               <div>
-                <div className="text-2xl font-bold text-gray-900">100%</div>
-                <div className="text-sm text-gray-600">Glute Focus</div>
+                <div className="text-2xl font-bold text-gray-900">28-Day</div>
+                <div className="text-sm text-gray-600">Tailored Plans</div>
               </div>
             </div>
           </div>

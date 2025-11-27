@@ -11,7 +11,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Transform your glutes with AI-powered 28-day workout programs, progress tracking, and personalized glute analysis.',
+  description: 'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis. No generic templates—every workout is custom-tailored specifically for you.',
 }
 
 export default function Home() {

@@ -4,9 +4,12 @@ export default function Download() {
   return (
     <section id="download" className="bg-gradient-to-r from-purple-600 to-purple-700 py-20 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">Ready to Maximize Your Glutes?</h2>
-        <p className="text-lg sm:text-xl text-purple-100 mb-12">
-          Join thousands building stronger, more powerful glutes with AI-powered tracking.
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">Ready for Your Custom Program?</h2>
+        <p className="text-lg sm:text-xl text-purple-100 mb-6">
+          Get a personalized 28-day glute program created by AI based on your unique body analysis. No generic templates—just workouts designed specifically for you.
+        </p>
+        <p className="text-base text-purple-200 mb-12">
+          Start with a free AI photo analysis and see your personalized glute score.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

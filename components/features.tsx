@@ -1,32 +1,32 @@
 'use client'
 
 import Image from 'next/image'
-import { Sparkles, Calendar, TrendingUp, Dumbbell } from 'lucide-react'
+import { Sparkles, Camera, TrendingUp, Dumbbell } from 'lucide-react'
 
 const features = [
   {
-    icon: Sparkles,
-    title: 'AI-Powered Analysis',
-    description: 'Get personalized glute scores with detailed breakdowns of shape, symmetry, and strength indicators.',
+    icon: Camera,
+    title: 'AI Photo Analysis',
+    description: 'Upload a progress photo and our AI analyzes your current glute development, assessing shape, symmetry, and strength indicators. This analysis becomes the foundation for your personalized program.',
     image: '/assets/progress-screen/before-after.png',
   },
   {
-    icon: Calendar,
-    title: '28-Day Programs',
-    description: 'Structured workout plans tailored to your fitness level, progressing from foundation to advanced.',
-    image: '/assets/home-screen/dashboard-view.png', // Updated to use new dashboard image
+    icon: Sparkles,
+    title: 'Custom-Tailored Programs',
+    description: 'No generic templates. Every 28-day program is uniquely created for you based on your AI photo analysis, fitness level, goals, equipment, and preferences. Your program adapts as you progress.',
+    image: '/assets/home-screen/dashboard-view.png',
     fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
   {
     icon: TrendingUp,
     title: 'Progress Tracking',
-    description: 'Visual charts and analytics showing your glute development over time with detailed metrics.',
+    description: 'Track your improvements with AI-powered score analysis. See detailed breakdowns of your glute development over time with visual comparisons and data-driven insights.',
     image: '/assets/progress-screen/fitness chart background.png',
   },
   {
     icon: Dumbbell,
     title: 'Expert Guidance',
-    description: 'Form cues, exercise demonstrations, and personalized recommendations for every workout.',
+    description: 'Get personalized form cues, exercise demonstrations, and recommendations tailored to your current level. Every workout is designed specifically for where you are right now.',
     image: '/assets/active-workout-screen/hipthrust.png',
   },
 ]
@@ -36,8 +36,8 @@ export default function Features() {
     <section id="features" className="bg-gray-50 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Key Features</h2>
-          <p className="text-lg sm:text-xl text-gray-600">Everything you need to transform your glute training</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Why GluteMaxxing is Different</h2>
+          <p className="text-lg sm:text-xl text-gray-600">Every program is built specifically for you, not pulled from a generic template</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -55,7 +55,6 @@ export default function Features() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
-                      // Fallback to alternative image if new image doesn't exist
                       if (feature.fallback) {
                         e.currentTarget.src = feature.fallback
                       }

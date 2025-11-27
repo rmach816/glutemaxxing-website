@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'GluteMaxxing - AI-Powered Glute Development & Workout Tracking',
     template: '%s | GluteMaxxing',
   },
-  description: 'Transform your glutes with AI-powered 28-day workout programs, progress tracking, and personalized glute analysis. Build stronger glutes with structured training plans designed for all fitness levels.',
+  description: 'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis, fitness level, and goals. Not a cookie-cutter template—every workout is custom-tailored specifically for you.',
   keywords: [
     'glute workouts',
     'glute training',

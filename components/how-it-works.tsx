@@ -1,29 +1,29 @@
 'use client'
 
 import Image from 'next/image'
-import { Download, Zap, BarChart3 } from 'lucide-react'
+import { Camera, Zap, BarChart3 } from 'lucide-react'
 
 const steps = [
   {
-    icon: Download,
+    icon: Camera,
     number: '1',
-    title: 'Complete Onboarding',
-    description: 'Answer a few questions about your goals, equipment, and fitness level. Our AI creates your personalized profile.',
-    image: '/assets/onbarding-screens/welcomescreen.png',
+    title: 'AI Photo Analysis',
+    description: 'Take a progress photo and our AI analyzes your current glute development. You\'ll receive a detailed score assessing shape, symmetry, and strength indicators. This analysis is the foundation for your personalized program.',
+    image: '/assets/progress-screen/before-after.png',
   },
   {
     icon: Zap,
     number: '2',
-    title: 'Get Your 28-Day Program',
-    description: 'Receive a structured workout plan tailored to your level. Programs progress from foundation to advanced.',
-    image: '/assets/workout-program-screens/28-day-program-calendar.png', // Updated to use new calendar image
+    title: 'Get Your Custom Program',
+    description: 'Based on your AI photo analysis, fitness level, goals, and equipment, our AI creates a completely personalized 28-day workout program. No two programs are the same—yours is built specifically for you.',
+    image: '/assets/workout-program-screens/28-day-program-calendar.png',
     fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
   {
     icon: BarChart3,
     number: '3',
     title: 'Track & Improve',
-    description: 'Log workouts, take progress photos, and watch your glute score improve over time.',
+    description: 'Complete your workouts and take progress photos. Watch your AI glute score improve over time. Every 28 days, get a new custom program based on your updated analysis and progress.',
     image: '/assets/progress-screen/before-after.png',
   },
 ]
@@ -34,7 +34,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
-          <p className="text-lg sm:text-xl text-gray-600">Get started in three simple steps</p>
+          <p className="text-lg sm:text-xl text-gray-600">Get your personalized program in three simple steps</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -55,7 +55,6 @@ export default function HowItWorks() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
-                        // Fallback to alternative image if new image doesn't exist
                         if (step.fallback) {
                           e.currentTarget.src = step.fallback
                         }
@@ -79,6 +78,30 @@ export default function HowItWorks() {
               </div>
             )
           })}
+        </div>
+
+        {/* Key Differentiator Box */}
+        <div className="mt-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 md:p-12 text-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Not a Cookie-Cutter Program</h3>
+            <p className="text-lg md:text-xl text-purple-100 leading-relaxed mb-6">
+              Unlike other fitness apps that give you the same generic workout plan, GluteMaxxing uses AI photo analysis to understand your unique starting point. Combined with your goals, equipment, and fitness level, we create a program that's <strong>100% personalized to you</strong>.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div>
+                <div className="text-3xl font-bold mb-2">AI Analysis</div>
+                <p className="text-purple-100">Your body, your starting point</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">Custom Built</div>
+                <p className="text-purple-100">Programs designed just for you</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">Evolves</div>
+                <p className="text-purple-100">New program every 28 days</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

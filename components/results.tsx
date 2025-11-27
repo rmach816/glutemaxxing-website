@@ -68,27 +68,30 @@ export default function Results() {
             </div>
             <div className="p-6 sm:p-12 flex flex-col justify-center">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                Track Your Transformation
+                AI Photo Analysis Powers Your Program
               </h3>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-                Our AI analyzes your progress photos to give you detailed scores and insights. 
-                See your glute development improve week by week with visual comparisons and 
-                data-driven metrics.
+                Our AI doesn't just track your progress—it uses your photo analysis to <strong>create your custom workout program</strong>. Every exercise, set, and rep is chosen based on your unique glute development, ensuring your program is perfectly tailored to where you are right now.
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-600 rounded-full" />
-                  <span className="text-gray-700">Shape & Symmetry Analysis</span>
+                  <span className="text-gray-700"><strong>Shape & Symmetry Analysis</strong> - AI assesses your current development</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-600 rounded-full" />
-                  <span className="text-gray-700">Strength Indicators</span>
+                  <span className="text-gray-700"><strong>Strength Indicators</strong> - Determines your starting fitness level</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-600 rounded-full" />
-                  <span className="text-gray-700">Personalized Improvement Areas</span>
+                  <span className="text-gray-700"><strong>Custom Program Generation</strong> - Your workout plan is built from this analysis</span>
                 </li>
               </ul>
+              <div className="bg-purple-50 rounded-lg p-4">
+                <p className="text-sm text-gray-700">
+                  <strong>💡 The Difference:</strong> Generic apps give everyone the same plan. GluteMaxxing analyzes YOUR body and creates a program specifically designed for YOUR current development level.
+                </p>
+              </div>
             </div>
           </div>
         </div>
