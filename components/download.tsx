@@ -14,7 +14,7 @@ export default function Download() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
-            href="https://apps.apple.com/app/glutemaxxing"
+            href="https://apps.apple.com/us/app/glutemaxxing/id6755850501"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-white text-purple-700 rounded-full font-bold text-lg hover:shadow-xl transition-shadow text-center"
