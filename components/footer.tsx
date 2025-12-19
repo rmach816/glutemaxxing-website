@@ -1,8 +1,7 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { Instagram, Youtube } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -12,26 +11,53 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image 
-                src="/icon.svg" 
-                alt="GluteMaxxing Logo" 
-                width={32} 
+              <Image
+                src="/icon.svg"
+                alt="GluteMaxxing Logo"
+                width={32}
                 height={32}
                 className="w-8 h-8"
               />
               <span className="font-bold text-white">GluteMaxxing</span>
             </div>
-            <p className="text-sm text-gray-400">Build stronger glutes. Unlock better performance.</p>
+            <p className="text-sm text-gray-400">
+              Build stronger glutes. Unlock better performance.
+            </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="#results" className="hover:text-white transition-colors">Results</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+              <li>
+                <a
+                  href="#features"
+                  className="hover:text-white transition-colors"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  className="hover:text-white transition-colors"
+                >
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#results"
+                  className="hover:text-white transition-colors"
+                >
+                  Results
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-white transition-colors">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -39,23 +65,43 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link></li>
-              <li><a href="mailto:support@glutemaxxing.app" className="hover:text-white transition-colors">Contact Support</a></li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="hover:text-white transition-colors"
+                >
+                  Terms of Use
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:support@glutemaxxing.app"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact Support
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Follow Us</h3>
-            <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube size={20} />
-              </a>
-            </div>
+            <h3 className="font-semibold text-white mb-4">Get In Touch</h3>
+            <p className="text-sm text-gray-400 mb-2">Questions or feedback?</p>
+            <a
+              href="mailto:support@glutemaxxing.app"
+              className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
+            >
+              support@glutemaxxing.app
+            </a>
           </div>
         </div>
 
@@ -64,10 +110,14 @@ export default function Footer() {
             © {new Date().getFullYear()} GluteMaxxing. All rights reserved.
           </p>
           <p className="text-xs text-gray-500 text-center leading-relaxed max-w-3xl mx-auto">
-            GluteMaxxing provides general fitness information only and is not a substitute for professional medical advice. Always consult a qualified health provider before starting a new exercise program. The app is for informational purposes and does not treat, cure, or prevent any disease.
+            GluteMaxxing provides general fitness information only and is not a
+            substitute for professional medical advice. Always consult a
+            qualified health provider before starting a new exercise program.
+            The app is for informational purposes and does not treat, cure, or
+            prevent any disease.
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

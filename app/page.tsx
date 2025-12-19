@@ -1,18 +1,19 @@
-import Navigation from '@/components/navigation'
-import Hero from '@/components/hero'
-import Features from '@/components/features'
-import HowItWorks from '@/components/how-it-works'
-import Results from '@/components/results'
-import Screens from '@/components/screens'
-import FAQ from '@/components/faq'
-import Download from '@/components/download'
-import Footer from '@/components/footer'
-import type { Metadata } from 'next'
+import Navigation from '@/components/navigation';
+import Hero from '@/components/hero';
+import Features from '@/components/features';
+import HowItWorks from '@/components/how-it-works';
+import Results from '@/components/results';
+import Screens from '@/components/screens';
+import FAQ from '@/components/faq';
+import Download from '@/components/download';
+import Footer from '@/components/footer';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis. No generic templates—every workout is custom-tailored specifically for you.',
-}
+  description:
+    'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis. No generic templates—every workout is custom-tailored specifically for you.',
+};
 
 export default function Home() {
   return (
@@ -31,14 +32,11 @@ export default function Home() {
               price: '0',
               priceCurrency: 'USD',
             },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              ratingCount: '1250',
-            },
-            description: 'AI-powered glute development app with 28-day workout programs and progress tracking.',
+            description:
+              'AI-powered glute development app with 28-day workout programs and progress tracking.',
             url: 'https://glutemaxxing.app',
-            image: 'https://glutemaxxing.app/assets/home-screen/motivationalfitnessscene.png',
+            image:
+              'https://glutemaxxing.app/assets/home-screen/motivationalfitnessscene.png',
           }),
         }}
       />
@@ -54,5 +52,5 @@ export default function Home() {
         <Footer />
       </main>
     </>
-  )
+  );
 }
