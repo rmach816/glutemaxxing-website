@@ -62,11 +62,6 @@ export default function HowItWorks() {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                       quality={85}
-                      onError={(e) => {
-                        if (step.fallback) {
-                          e.currentTarget.src = step.fallback;
-                        }
-                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent" />
                     <div className="absolute top-6 left-6">

@@ -53,12 +53,6 @@ export default function Screens() {
                   loading="lazy"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   quality={85}
-                  onError={(e) => {
-                    // Fallback to alternative image if new image doesn't exist
-                    if (screen.fallback) {
-                      e.currentTarget.src = screen.fallback;
-                    }
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
