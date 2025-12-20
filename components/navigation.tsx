@@ -1,34 +1,36 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import Image from 'next/image'
-import { Menu, X, User } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { Menu, X, User } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 export default function Navigation() {
-  const router = useRouter()
-  const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState<any>(null)
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    checkUser()
+    checkUser();
     supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user || null)
-    })
-  }, [])
+      setUser(session?.user || null);
+    });
+  }, []);
 
   const checkUser = async () => {
-    const { data: { session } } = await supabase.auth.getSession()
-    setUser(session?.user || null)
-  }
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    setUser(session?.user || null);
+  };
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: 'smooth' })
-    setIsOpen(false)
-  }
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -43,21 +45,39 @@ export default function Navigation() {
               height={32}
               className="w-8 h-8"
             />
-            <span className="font-bold text-lg text-gray-900">GluteMaxxing</span>
+            <span className="font-bold text-lg text-gray-900">
+              GluteMaxxing
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <button
+              onClick={() => scrollToSection('features')}
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              aria-label="Navigate to Features section"
+            >
               Features
             </button>
-            <button onClick={() => scrollToSection('how-it-works')} className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <button
+              onClick={() => scrollToSection('how-it-works')}
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              aria-label="Navigate to How It Works section"
+            >
               How It Works
             </button>
-            <button onClick={() => scrollToSection('results')} className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <button
+              onClick={() => scrollToSection('results')}
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              aria-label="Navigate to Results section"
+            >
               Results
             </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900 text-sm font-medium">
+            <button
+              onClick={() => scrollToSection('faq')}
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              aria-label="Navigate to FAQ section"
+            >
               FAQ
             </button>
           </div>
@@ -75,8 +95,8 @@ export default function Navigation() {
                 </Link>
                 <button
                   onClick={async () => {
-                    await supabase.auth.signOut()
-                    router.push('/')
+                    await supabase.auth.signOut();
+                    router.push('/');
                   }}
                   className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
                 >
@@ -105,6 +125,8 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-gray-900"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -148,9 +170,9 @@ export default function Navigation() {
                 </Link>
                 <button
                   onClick={async () => {
-                    await supabase.auth.signOut()
-                    setIsOpen(false)
-                    router.push('/')
+                    await supabase.auth.signOut();
+                    setIsOpen(false);
+                    router.push('/');
                   }}
                   className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
                 >
@@ -168,8 +190,8 @@ export default function Navigation() {
                 </Link>
                 <button
                   onClick={() => {
-                    scrollToSection('download')
-                    setIsOpen(false)
+                    scrollToSection('download');
+                    setIsOpen(false);
                   }}
                   className="block w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm mt-4"
                 >
@@ -181,5 +203,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }

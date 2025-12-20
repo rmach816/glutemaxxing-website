@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -17,6 +15,7 @@ export default function Footer() {
                 width={32}
                 height={32}
                 className="w-8 h-8"
+                loading="lazy"
               />
               <span className="font-bold text-white">GluteMaxxing</span>
             </div>

@@ -1,6 +1,7 @@
-import type { Metadata, Viewport } from 'next'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import { inter } from './fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://glutemaxxing.app'),
@@ -8,7 +9,8 @@ export const metadata: Metadata = {
     default: 'GluteMaxxing - AI-Powered Glute Development & Workout Tracking',
     template: '%s | GluteMaxxing',
   },
-  description: 'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis, fitness level, and goals. Not a cookie-cutter template—every workout is custom-tailored specifically for you.',
+  description:
+    'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis, fitness level, and goals. Not a cookie-cutter template—every workout is custom-tailored specifically for you.',
   keywords: [
     'glute workouts',
     'glute training',
@@ -49,7 +51,8 @@ export const metadata: Metadata = {
     url: 'https://glutemaxxing.app',
     siteName: 'GluteMaxxing',
     title: 'GluteMaxxing - AI-Powered Glute Development & Workout Tracking',
-    description: 'Transform your glutes with AI-powered 28-day workout programs, progress tracking, and personalized glute analysis.',
+    description:
+      'Transform your glutes with AI-powered 28-day workout programs, progress tracking, and personalized glute analysis.',
     images: [
       {
         url: '/assets/home-screen/motivationalfitnessscene.png',
@@ -62,7 +65,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'GluteMaxxing - AI-Powered Glute Development',
-    description: 'Transform your glutes with AI-powered 28-day workout programs and progress tracking.',
+    description:
+      'Transform your glutes with AI-powered 28-day workout programs and progress tracking.',
     images: ['/assets/home-screen/motivationalfitnessscene.png'],
   },
   robots: {
@@ -76,30 +80,46 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: 'https://glutemaxxing.app',
+  },
   verification: {
     // Add Google Search Console verification when available
     // google: 'your-verification-code',
   },
-}
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'mobile-web-app-capable': 'yes',
+  },
+};
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
   themeColor: '#8E00FF',
-}
+  viewportFit: 'cover',
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://vercel.live" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
+      </head>
       <body className="font-sans antialiased">
-        {children}
+        <a href="#main-content" className="sr-only focus:not-sr-only">
+          Skip to main content
+        </a>
+        <main id="main-content">{children}</main>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

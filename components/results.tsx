@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 
 const benefits = [
@@ -46,7 +44,13 @@ export default function Results() {
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
             >
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">{benefit.icon}</span>
+                <span
+                  className="text-3xl"
+                  role="img"
+                  aria-label={benefit.title}
+                >
+                  {benefit.icon}
+                </span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {benefit.title}
@@ -64,9 +68,12 @@ export default function Results() {
             <div className="relative h-96 bg-gradient-to-br from-purple-100 to-purple-200">
               <Image
                 src="/assets/progress-screen/before-after.png"
-                alt="Progress comparison"
+                alt="Progress comparison showing before and after transformation"
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
               />
             </div>
             <div className="p-6 sm:p-12 flex flex-col justify-center">
