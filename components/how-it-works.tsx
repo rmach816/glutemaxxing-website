@@ -5,17 +5,17 @@ const steps = [
   {
     icon: Camera,
     number: '1',
-    title: 'AI Photo Analysis',
+    title: 'Capture Progress Photos',
     description:
-      "Take a progress photo and our AI analyzes your current glute development. You'll receive a detailed score assessing shape, symmetry, and strength indicators. This analysis is the foundation for your personalized program.",
+      'Take two photos (side and back profile) with our GluteVision™-guided camera overlay. Choose your clothing preference (leggings, shorts, or bikini/swimsuit). The overlay ensures consistent positioning for accurate tracking.',
     image: '/assets/home-screen/aiphotoanalysis.png',
   },
   {
     icon: Zap,
     number: '2',
-    title: 'Get Your Custom Program',
+    title: 'Get Your GluteMaxxing Score™',
     description:
-      'Based on your AI photo analysis, fitness level, goals, and equipment, our AI creates a completely personalized 28-day workout program. No two programs are the same—yours is built specifically for you.',
+      'GluteVision™ analyzes your photos in seconds, providing your comprehensive score (0-100) with percentile ranking. See all 21 metrics including projection, roundness, lift index, symmetry, definition, and more.',
     image: '/assets/workout-program-screens/28-day-program-calendar.png',
     fallback: '/assets/home-screen/womanbrowsingtablet.png',
   },
@@ -24,7 +24,7 @@ const steps = [
     number: '3',
     title: 'Track & Improve',
     description:
-      'Complete your workouts and take progress photos. Watch your AI glute score improve over time. Every 28 days, get a new custom program based on your updated analysis and progress.',
+      'Take new photos every 2+ weeks. GluteVision™ re-analyzes and updates all scores. Watch your progress with score history charts, before/after photo comparisons, and smart coaching insights on what to focus on.',
     image: '/assets/home-screen/progresstracking.png',
   },
 ];
@@ -38,7 +38,7 @@ export default function HowItWorks() {
             How It Works
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            Get your personalized program in three simple steps
+            Get objective glute scores and track your progress in three simple steps
           </p>
         </div>
 
@@ -49,10 +49,10 @@ export default function HowItWorks() {
               <div key={index} className="relative">
                 {/* Connector line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-32 left-full w-full h-1 bg-purple-200 transform translate-x-1/2 z-0" />
+                  <div className="hidden md:block absolute top-32 left-full w-full h-1 bg-gradient-to-r from-purple-300 to-purple-200 transform translate-x-1/2 z-0" />
                 )}
 
-                <div className="relative z-10 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                <div className="relative z-10 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100">
                   <div className="relative h-64 overflow-hidden">
                     <Image
                       src={step.image}
@@ -65,8 +65,8 @@ export default function HowItWorks() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent" />
                     <div className="absolute top-6 left-6">
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                        <span className="text-xl font-bold text-purple-600">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-lg">
+                        <span className="text-xl font-bold text-white">
                           {step.number}
                         </span>
                       </div>
@@ -93,34 +93,30 @@ export default function HowItWorks() {
         </div>
 
         {/* Key Differentiator Box */}
-        <div className="mt-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 md:p-12 text-white">
+        <div className="mt-16 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Not a Cookie-Cutter Program
+              A Progress Tracking Companion, Not a Workout App
             </h3>
             <p className="text-lg md:text-xl text-purple-100 leading-relaxed mb-6">
-              Unlike other fitness apps that give you the same generic workout
-              plan, GluteMaxxing uses AI photo analysis to understand your
-              unique starting point. Combined with your goals, equipment, and
-              fitness level, we create a program that's{' '}
-              <strong>100% personalized to you</strong>.
+              GluteMaxxing works <strong>alongside your existing fitness routine</strong>. Your workout app gives you training programs—GluteMaxxing gives you objective proof that your training is working with GluteVision™-powered analysis and percentile-ranked scoring.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div>
-                <div className="text-3xl font-bold mb-2">AI Analysis</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold mb-2">Every 2+ Weeks</div>
                 <p className="text-purple-100">
-                  Your body, your starting point
+                  Take new photos and see your progress
                 </p>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">Custom Built</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold mb-2">21 Metrics</div>
                 <p className="text-purple-100">
-                  Programs designed just for you
+                  Comprehensive glute analysis with percentiles
                 </p>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">Evolves</div>
-                <p className="text-purple-100">New program every 28 days</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="text-3xl font-bold mb-2">Visual Progress</div>
+                <p className="text-purple-100">Before/after comparison with overlay slider</p>
               </div>
             </div>
           </div>

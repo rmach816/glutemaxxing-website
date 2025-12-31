@@ -1,30 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Menu, X, User } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    checkUser();
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user || null);
-    });
-  }, []);
-
-  const checkUser = async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    setUser(session?.user || null);
-  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -33,7 +15,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -54,28 +36,28 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('features')}
-              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
               aria-label="Navigate to Features section"
             >
               Features
             </button>
             <button
               onClick={() => scrollToSection('how-it-works')}
-              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
               aria-label="Navigate to How It Works section"
             >
               How It Works
             </button>
             <button
               onClick={() => scrollToSection('results')}
-              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
               aria-label="Navigate to Results section"
             >
               Results
             </button>
             <button
               onClick={() => scrollToSection('faq')}
-              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
               aria-label="Navigate to FAQ section"
             >
               FAQ
@@ -84,41 +66,12 @@ export default function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex gap-3 items-center">
-            {user ? (
-              <>
-                <Link
-                  href="/dashboard"
-                  className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                >
-                  <User size={18} />
-                  <span>View Progress</span>
-                </Link>
-                <button
-                  onClick={async () => {
-                    await supabase.auth.signOut();
-                    router.push('/');
-                  }}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                >
-                  Sign Out
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/auth"
-                  className="px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                >
-                  Sign In
-                </Link>
-                <button
-                  onClick={() => scrollToSection('download')}
-                  className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm hover:shadow-lg transition-shadow"
-                >
-                  Get The App
-                </button>
-              </>
-            )}
+            <button
+              onClick={() => scrollToSection('download')}
+              className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              Download App
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -159,46 +112,15 @@ export default function Navigation() {
             >
               FAQ
             </button>
-            {user ? (
-              <>
-                <Link
-                  href="/dashboard"
-                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  View Progress
-                </Link>
-                <button
-                  onClick={async () => {
-                    await supabase.auth.signOut();
-                    setIsOpen(false);
-                    router.push('/');
-                  }}
-                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                >
-                  Sign Out
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/auth"
-                  className="block w-full text-left px-4 py-2 text-gray-600 hover:text-gray-900 text-sm font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Sign In
-                </Link>
-                <button
-                  onClick={() => {
-                    scrollToSection('download');
-                    setIsOpen(false);
-                  }}
-                  className="block w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm mt-4"
-                >
-                  Get The App
-                </button>
-              </>
-            )}
+            <button
+              onClick={() => {
+                scrollToSection('download');
+                setIsOpen(false);
+              }}
+              className="block w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full font-medium text-sm mt-4"
+            >
+              Download App
+            </button>
           </div>
         )}
       </div>

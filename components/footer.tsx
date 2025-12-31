@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Sparkles } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -19,8 +20,14 @@ export default function Footer() {
               />
               <span className="font-bold text-white">GluteMaxxing</span>
             </div>
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span className="text-sm text-purple-300 font-medium">
+                Powered by GluteVision™
+              </span>
+            </div>
             <p className="text-sm text-gray-400">
-              Build stronger glutes. Unlock better performance.
+              Objective glute analysis and progress tracking with AI-powered scoring.
             </p>
           </div>
 
@@ -106,10 +113,10 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <p className="text-sm text-gray-400 text-center mb-4">
-            © {new Date().getFullYear()} GluteMaxxing. All rights reserved.
+            © {new Date().getFullYear()} GluteMaxxing. All rights reserved. GluteVision™ is a trademark of GluteMaxxing.
           </p>
           <p className="text-xs text-gray-500 text-center leading-relaxed max-w-3xl mx-auto">
-            GluteMaxxing provides general fitness information only and is not a
+            GluteMaxxing provides general fitness information and progress tracking only and is not a
             substitute for professional medical advice. Always consult a
             qualified health provider before starting a new exercise program.
             The app is for informational purposes and does not treat, cure, or

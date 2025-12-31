@@ -11,9 +11,9 @@ import { OrganizationSchema, FAQSchema, BreadcrumbSchema } from './schema';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'GluteMaxxing - GluteVision™ AI Glute Analysis & Progress Tracking',
   description:
-    'Get a completely personalized 28-day glute program created by AI based on your unique photo analysis. No generic templates—every workout is custom-tailored specifically for you.',
+    'GluteVision™ scores your glutes so you don\'t have to guess. Get objective AI-powered analysis across 21 metrics with percentile rankings. Track progress your eyes can\'t detect. Works alongside your existing fitness routine.',
 };
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
               priceCurrency: 'USD',
             },
             description:
-              'AI-powered glute development app with 28-day workout programs and progress tracking.',
+              'GluteVision™-powered glute analysis and progress tracking app with 21 comprehensive metrics and percentile rankings.',
             url: 'https://glutemaxxing.app',
             image:
               'https://glutemaxxing.app/assets/home-screen/motivationalfitnessscene.png',
